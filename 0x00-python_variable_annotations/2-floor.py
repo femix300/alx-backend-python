@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
+'''Basic Annotations - floor'''
 
 import math
-
-'''Basic Annotations - floor'''
 
 
 def floor(n: float) -> int:
