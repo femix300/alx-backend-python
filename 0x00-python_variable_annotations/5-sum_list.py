@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
+'''Complex types - list of floats'''
 from typing import List
 from functools import reduce
-
-'''Complex types - list of floats'''
 
 
 def sum_list(input_list: List[float]) -> float:
