@@ -18,7 +18,3 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         tasks.append(task)
 
     return [await task for task in asyncio.as_completed(tasks)]
-
-print(asyncio.run(wait_n(5, 5)))
-print(asyncio.run(wait_n(10, 7)))
-print(asyncio.run(wait_n(10, 0)))
