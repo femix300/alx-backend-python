@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 '''Asynchronus tasks'''
 from typing import List
+import asyncio
 
 task_wait_random = __import__('3-tasks').task_wait_random
 
@@ -11,8 +12,8 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     and returns a list containing its return value
     '''
 
-    list_of_delays = []
+    tasks = []
     for i in range(n):
-        delay = await task_wait_random(max_delay)
-        list_of_delays.append(delay)
-    return list_of_delays
+        task = task_wait_random(max_delay)
+        tasks.append(task)
+    return [await task for task in asyncio.as_completed(tasks)]
